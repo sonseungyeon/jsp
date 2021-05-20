@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ include file="mydata.jspf"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ex01.jsp</title>
 </head>
 <body>
-	<h2>sub.jsp에서 만드는 코드</h2>
-	<%=name %>
+	이름:<%=name%>, 비밀번호: <%=password %>
 </body>
 </html>
