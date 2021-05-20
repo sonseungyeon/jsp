@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%=("로그인이 실패하셨습니다") %>
+
 </body>
 </html>

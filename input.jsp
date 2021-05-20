@@ -7,12 +7,10 @@
 <title>input.jsp</title>
 </head>
 <body>
-	<h1>데이타 입력</h1>
-	<%-- <form action="proc.jsp"> 자바객체방식--%>
-	<form action="proc_useBean.jsp">
-		<input type ="text" name="name" placeholder="이름">
-		<input type ="number" name="age" min="20" max="100" placeholder="나이">
-		<input type="submit">
+	<form action="login_proc.jsp">
+		<input type="text" name="userId" placeholder="아이디를 입력하세요">
+		<input type="text" name="password" placeholder="패스워드를 입력하세요">
+		<input type="submit" value="전송">
 	</form>
 </body>
 </html>
