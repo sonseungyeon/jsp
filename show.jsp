@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<jsp:useBean id="student" type="ex01.useBean.Student" scope="request" />
+    pageEncoding="UTF-8"%>
+<jsp:useBean id="employee" type="ex01.employee" scope="request"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,9 @@
 <title>show.jsp</title>
 </head>
 <body>
-유즈빈방식<br>
-	이름 : <jsp:getProperty property="name" name="student"/><br>
-	나이 : <jsp:getProperty property="age" name="student"/><br>
-	국어 : <jsp:getProperty property="kor" name="student"/><br>
-	영어 : <jsp:getProperty property="eng" name="student"/><br>
-	수학 : <jsp:getProperty property="math" name="student"/>
+	이름 : <jsp:getProperty property="name" name="employee"/><br>
+	연봉 : <jsp:getProperty property="salary" name="employee"/><br>
+	직급 : <jsp:getProperty property="position" name="employee"/><br>
+	생일 : <jsp:getProperty property="birthDate" name="employee"/><br>
 </body>
 </html>
