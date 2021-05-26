@@ -1,4 +1,4 @@
-package jsp08_mvc.guestbook.db;
+package jsp08_mvc.marvel.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
