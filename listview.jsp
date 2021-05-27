@@ -8,24 +8,33 @@
 <title>listview.jsp</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath }/write" method="post">
-	<fieldset>
-		<legend>마블 영화</legend>
-		<input type="text" name="marvelId" placeholder="마블 아이디">
-		<input type="submit" value="메시지 남기기"><br>
-		<textarea rows="5" cols="20" placeholder="제목" name="title"></textarea>
-	</fieldset>
-</form>
-<c:if test="${viewData.marvelTotalCount ==0}">
+	<form action="${pageContext.request.contextPath }/write" method="post">
+		<fieldset>
+			<legend>마블 영화</legend>
+			<input type="text" placeholder="제목" name="title"><br>
+			<input type="text" placeholder="영어제목" name="titleEng"><br>
+			<input type="text" placeholder="월드박스오피스" name="worldBoxOffice"><br>
+			<input type="submit" value="메시지 남기기"><br>
+			
+		</fieldset>
+	</form>
+	<c:if test="${viewData.marvelTotalCount ==0}">
 	등록된 메시지가 없습니다.
 </c:if>
 	<c:if test="${viewData.marvelTotalCount >0}">
 		<section>
 			<c:forEach var="marvel" items="${viewData.marvelList }">
 				<article>
-					마블 ID: ${marvel.marverId }<br>
+					마블 ID: ${marvel.marvelId }<br>
+					<a href="${pageContext.request.contextPath }/update?marvel_id=${marvel.marvelId}">수정</a>
+					<%-- <a href="${pageContext.request.contextPath }/update?message_id=${message.messageId}">삭제</a> --%>
 					영화 제목 : ${marvel.title }<br>
-					영화 영어제목 : ${marvel.titleEng }<br><%-- 
+					영화 영어제목 : ${marvel.titleEng }<br>
+					릴리즈날짜 : ${marvel.releaseDate }<br>
+					월드박스오피스 : ${marvel.worldBoxOffice }<br>
+					작성날짜 : ${marvel.writeDate }<br>
+					업데이트날짜 : ${marvel.updateDate }<br>
+					<%-- 
 					내용 : 
 					<div>
 						${marvel.message }
@@ -37,7 +46,7 @@
 		<%-- 페이징! --%>
 		<section>
 			<c:forEach var="pageNum" begin="1" end="${viewData.pageTotalCount }">
-				<a href="list.jsp?page=${pageNum }">[${pageNum }]</a>
+				<a href="list?page=${pageNum }">[${pageNum }]</a>
 			</c:forEach>
 		</section>
 	</c:if>
