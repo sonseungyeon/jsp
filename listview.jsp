@@ -26,19 +26,14 @@
 			<c:forEach var="marvel" items="${viewData.marvelList }">
 				<article>
 					마블 ID: ${marvel.marvelId }<br>
-					<a href="${pageContext.request.contextPath }/update?marvel_id=${marvel.marvelId}">수정</a>
-					<%-- <a href="${pageContext.request.contextPath }/update?message_id=${message.messageId}">삭제</a> --%>
 					영화 제목 : ${marvel.title }<br>
 					영화 영어제목 : ${marvel.titleEng }<br>
 					릴리즈날짜 : ${marvel.releaseDate }<br>
 					월드박스오피스 : ${marvel.worldBoxOffice }<br>
 					작성날짜 : ${marvel.writeDate }<br>
 					업데이트날짜 : ${marvel.updateDate }<br>
-					<%-- 
-					내용 : 
-					<div>
-						${marvel.message }
-					</div> --%>
+					<a href="${pageContext.request.contextPath }/update?marvel_id=${marvel.marvelId}">수정</a><br>
+					<a href="${pageContext.request.contextPath }/delete?marvel_id=${marvel.marvelId}">삭제</a><br>
 				</article>
 			</c:forEach>
 		</section>

@@ -107,7 +107,15 @@ public class MarvelDao {
 			pst.setTimestamp(5, Timestamp.valueOf(marvelDto.getWriteDate()));
 			pst.setTimestamp(6, Timestamp.valueOf(marvelDto.getUpdateDate()));
 			pst.setInt(7, marvelDto.getMarvelId());
-			System.out.println(marvelDto.getMarvelId());
+			pst.executeUpdate();
+		}
+	}
+	
+	public void deleteMarvel(Connection conn, int marvelId) throws SQLException {
+		String sql = "delete from marvelmovie where marvel_id = ?";
+		
+		try(PreparedStatement pst = conn.prepareStatement(sql)){
+			pst.setInt(1, marvelId);
 			pst.executeUpdate();
 		}
 	}

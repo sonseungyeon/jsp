@@ -28,4 +28,13 @@
 		<servlet-name>marvelUpdateController</servlet-name>
 		<url-pattern>/update</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>marvelDeleteController</servlet-name>
+		<servlet-class>jsp08_mvc.marvel.controller.MarvelDeleteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>marvelDeleteController</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
 </web-app>
